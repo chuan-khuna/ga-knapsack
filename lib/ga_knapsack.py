@@ -111,12 +111,11 @@ class GAknapsack:
         self.pop = self.next_gen
 
     def _tournament_selection(self):
-        for i in range(self.best_parent, self.nextgen_parent):
-            tour_fitness = np.random.choice(self.fitness, self.tournament_size)
-            tour_fittest = np.max(tour_fitness)
+        tour_fitness = np.random.choice(self.fitness, self.tournament_size)
+        tour_fittest = np.max(tour_fitness)
 
-            fittest_invidual = self.pop[np.where(self.fitness == tour_fittest)[0][0]]
-            return fittest_invidual
+        fittest_individual = self.pop[np.where(self.fitness == tour_fittest)[0][0]]
+        return fittest_individual
 
     def _crossover(self, a, b, loc):
         start = loc[0]
