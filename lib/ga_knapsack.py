@@ -97,7 +97,7 @@ class GAknapsack:
         parent_ind = np.arange(len(parent))
         gene_ind = np.arange(0, self.gene_length)
 
-        for i in range(self.nextgen_parent, self.pop_size - 1, 2):
+        for i in range(self.nextgen_parent, self.pop_size, 2):
             parent_a, parent_b = parent[np.random.choice(parent_ind, 2, replace=False)]
             loc = np.sort(np.random.choice(gene_ind, 2, replace=False))
             offspring_a, offspring_b = self._crossover(parent_a, parent_b, loc)
